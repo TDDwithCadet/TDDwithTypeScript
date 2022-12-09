@@ -1,5 +1,5 @@
 
-export default abstract class Money {
+export default class Money {
     protected amount:number;
     protected currency:string;
 
@@ -11,7 +11,7 @@ export default abstract class Money {
     public equals(Object:Object){
         const money:Money = Object as Money;
         return (this.amount === money.amount
-            && this.constructor.name === money.constructor.name);
+            && this.getCurrency() === money.getCurrency());
     }
 
     public static dollar(amount:number):Money{
@@ -22,20 +22,17 @@ export default abstract class Money {
         return (new Franc(amount, "CHF"));
     }
 
-    public abstract times(amount:number):Money;
+    public times(multipier:number) {
+        return (new Money(this.amount * multipier, this.currency));
+    }
+
     getCurrency() {
         return this.currency;
     }
 }
 
 export class Franc extends Money {
-    public times(multipier:number) {
-        return (Money.franc(this.amount * multipier));
-    }
 }
 
 export class Dollar extends Money{
-    public times(multipier:number) {
-        return (Money.dollar(this.amount * multipier));
-    }
 }
