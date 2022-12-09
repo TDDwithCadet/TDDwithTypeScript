@@ -1,6 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Dollar from './Dollar'
+
+
+describe('get result of multiplying stock by number', () => {
+  it('multipling correct', () => {
+      const five:Dollar = new Dollar(5);
+      const result:number = five.times(2);
+      const expected:number = 10;
+      expect(result).toEqual(expected)
+    })
+})
 
 function App() {
   return (
