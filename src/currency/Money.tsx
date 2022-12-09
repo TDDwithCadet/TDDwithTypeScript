@@ -4,9 +4,10 @@ export default class Money {
     constructor(amount:number){
         this.amount = amount;
     }
-    
+
     public equals(Object:Object) {
         const money:Money = Object as Money;
-        return (this.amount === money.amount);
+        return (this.amount === money.amount
+            && this.constructor.name === money.constructor.name);
     }
 }
