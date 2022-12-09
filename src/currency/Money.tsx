@@ -15,11 +15,11 @@ export default class Money {
     }
 
     public static dollar(amount:number):Money{
-        return (new Dollar(amount, "USD"));
+        return (new Money(amount, "USD"));
     }
 
     public static franc(amount:number){
-        return (new Franc(amount, "CHF"));
+        return (new Money(amount, "CHF"));
     }
 
     public times(multipier:number) {
@@ -29,10 +29,4 @@ export default class Money {
     getCurrency() {
         return this.currency;
     }
-}
-
-export class Franc extends Money {
-}
-
-export class Dollar extends Money{
 }
