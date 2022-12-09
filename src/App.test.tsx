@@ -10,9 +10,9 @@ describe('get result of multiplying stock by number', () => {
       expect(five.times(3)).toEqual(Money.dollar(15));
     })
   it('multipling correct with Franc', () => {
-      const five:Franc = new Franc(5);
-      expect(five.times(2)).toEqual(new Franc(10));
-      expect(five.times(3)).toEqual(new Franc(15));
+      const five:Franc = Money.franc(5);
+      expect(five.times(2)).toEqual(Money.franc(10));
+      expect(five.times(3)).toEqual(Money.franc(15));
     })
   it('equality correct', () => {
      expect(Money.dollar(5).equals(Money.dollar(5))).toEqual(true);
