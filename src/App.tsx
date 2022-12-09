@@ -7,9 +7,10 @@ import Dollar from './Dollar'
 describe('get result of multiplying stock by number', () => {
   it('multipling correct', () => {
       const five:Dollar = new Dollar(5);
-      const result:number = five.times(2);
-      const expected:number = 10;
-      expect(result).toEqual(expected)
+      let product:Dollar = five.times(2);
+      expect(product.amount).toEqual(10);
+      product = five.times(3);
+      expect(product.amount).toEqual(15);
     })
 })
 

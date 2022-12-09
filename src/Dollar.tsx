@@ -4,7 +4,6 @@ export default class Dollar {
         this.amount = amount;
     }
     public times(multipier:number) {
-        this.amount *= multipier
-        return this.amount;
+        return (new Dollar(this.amount * multipier));
     }
 }
