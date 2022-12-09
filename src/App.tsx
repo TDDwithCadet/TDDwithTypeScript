@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dollar from './Dollar'
+import Dollar from './currency/Dollar'
 
 
 describe('get result of multiplying stock by number', () => {
