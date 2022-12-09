@@ -6,4 +6,9 @@ export default class Dollar {
     public times(multipier:number) {
         return (new Dollar(this.amount * multipier));
     }
+    public equals(Object:Object) {
+        const dollar:Dollar = Object as Dollar;
+        return (this.amount === dollar.amount);
+    }
+
 }

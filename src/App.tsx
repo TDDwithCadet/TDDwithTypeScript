@@ -12,6 +12,10 @@ describe('get result of multiplying stock by number', () => {
       product = five.times(3);
       expect(product.amount).toEqual(15);
     })
+  it('equality correct', () => {
+     expect(new Dollar(5).equals(new Dollar(5))).toEqual(true);
+     expect(new Dollar(5).equals(new Dollar(6))).toEqual(false);
+  })
 })
 
 function App() {
