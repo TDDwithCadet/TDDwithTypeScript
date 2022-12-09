@@ -17,3 +17,7 @@
 - react Test Jest
 
 [](https://www.newline.co/@bespoyasov/how-to-write-your-first-unit-test-in-react-typescript-app--ca51d0c0)
+
+# 노션 링크
+
+[TDD in React](https://www.notion.so/TDD-in-React-7e281802bab04ee8983a5177b815e571)
