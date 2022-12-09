@@ -1,9 +1,11 @@
 
 export default abstract class Money {
     protected amount:number;
+    protected currency:string;
 
-    constructor(amount:number){
+    constructor(amount:number, currency:string){
         this.amount = amount;
+        this.currency = currency;
     }
 
     public equals(Object:Object){
@@ -12,25 +14,28 @@ export default abstract class Money {
             && this.constructor.name === money.constructor.name);
     }
 
-    public static dollar(amount:number){
-        return (new Dollar(amount) as Money);
+    public static dollar(amount:number):Money{
+        return (new Dollar(amount, "USD"));
     }
 
     public static franc(amount:number){
-        return (new Franc(amount) as Money);
+        return (new Franc(amount, "CHF"));
     }
 
-    public abstract times(amount:number):void;
+    public abstract times(amount:number):Money;
+    getCurrency() {
+        return this.currency;
+    }
 }
 
 export class Franc extends Money {
     public times(multipier:number) {
-        return (new Franc(this.amount * multipier));
+        return (Money.franc(this.amount * multipier));
     }
 }
 
 export class Dollar extends Money{
     public times(multipier:number) {
-        return (new Dollar(this.amount * multipier));
+        return (Money.dollar(this.amount * multipier));
     }
 }
