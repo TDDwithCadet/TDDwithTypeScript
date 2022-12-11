@@ -41,6 +41,15 @@ describe('get result of multiplying stock by number', () => {
     const result:Money = bank.reduce(Money.dollar(1), "USD");
     expect(result).toEqual(Money.dollar(1));
   })
+  it('reduceMoney correct with differentCurrency', () => {
+    const bank:Bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    const result:Money = bank.reduce(Money.franc(2), "USD");
+    expect(result).toEqual(Money.dollar(1));
+  })
+  it('identityRate correct', () => {
+    expect(1).toEqual(new Bank().rate("USD", "USD"));  
+  })
 })
 
 test('renders learn react link', () => {
