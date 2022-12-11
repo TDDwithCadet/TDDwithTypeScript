@@ -24,11 +24,11 @@ export default class Money implements Expression{
         return (new Money(amount, "CHF"));
     }
 
-    public times(multipier:number):Money {
+    public times(multipier:number):Expression {
         return (new Money(this.amount * multipier, this.currency));
     }
 
-    public plus(addend:Money):Expression {
+    public plus(addend:Expression):Expression {
         return (new Sum(this, addend))
     }
 

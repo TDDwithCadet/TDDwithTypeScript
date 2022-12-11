@@ -2,7 +2,8 @@ import Money from './Money'
 import {Pair} from './Pair'
 
 export interface Expression{
-    reduce(bank:Bank, to:string):Money
+    reduce(bank:Bank, to:string):Money;
+    plus(addend:Expression):Expression;
 }
 
 export class Bank{

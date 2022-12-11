@@ -50,6 +50,15 @@ describe('get result of multiplying stock by number', () => {
   it('identityRate correct', () => {
     expect(1).toEqual(new Bank().rate("USD", "USD"));  
   })
+  it('mixedAddition correct', () => {
+    const fiveBucks:Expression = Money.dollar(5);
+    const tenFrancs:Expression = Money.franc(10);
+    const bank:Bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    const result:Money = bank.reduce(
+      fiveBucks.plus(tenFrancs), "USD");
+    expect(result).toEqual(Money.dollar(10));
+  })
 })
 
 test('renders learn react link', () => {
