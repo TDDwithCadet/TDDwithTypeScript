@@ -1,25 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import styled, { css } from 'styled-components';
+import { testForTest } from './xUnit/testForTest';
+const SeccessOrFail = styled.div<{isPass?:string}>`
+  width: 100vw;
+  height: 100vh;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${(props) => 
+    props.isPass === '1' ? css`background-color: green` : css`background-color: red`
+  }
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SeccessOrFail isPass={testForTest()}>{testForTest() === "1" ? "Success" : "Fail"}</SeccessOrFail>
   );
 }
 
