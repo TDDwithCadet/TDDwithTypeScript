@@ -1,6 +1,6 @@
 export class TestResult{
-    private runCount:number;
-    private failureCount:number;
+    public runCount:number;
+    public failureCount:number;
 
     constructor(){
         this.runCount = 0;

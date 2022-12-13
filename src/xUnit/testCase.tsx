@@ -12,15 +12,14 @@ export class TestCase {
     public setUp(){}
     public tearDown(){}
 
-    public run():TestResult {
-        const result:TestResult = new TestResult();
+    public run(result:TestResult):TestResult {
         result.testStarted();
-        result.testFailed();
         this.setUp();
         try {
             const method:string = "this." + this.name + "()";
             eval(method);
         } catch(e: any) {
+            console.log(e);
             result.testFailed();
         }
         this.tearDown();
