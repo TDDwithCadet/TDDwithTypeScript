@@ -1,6 +1,5 @@
 
 import { TestResult } from "./testResult";
-import WasRun from "./wasRun";
 
 export class TestCase {
     protected name:string;

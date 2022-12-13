@@ -1,5 +1,3 @@
-import { isThisTypeNode } from 'typescript';
-import { resourceLimits } from 'worker_threads';
 import { TestCase } from './testCase';
 import { TestResult } from './testResult';
 import { TestSuite } from './testSuite';
