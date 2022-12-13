@@ -8,7 +8,8 @@ export class TestCase {
         this.name = name;
     }
 
-    public setUp(){ }
+    public setUp(){}
+    public tearDown(){}
 
     public run():string {
         this.setUp();
@@ -19,6 +20,7 @@ export class TestCase {
         } catch(e: any) {
             console.log(method, " not exist.")
         }
+        this.tearDown();
         return (result);
     }
 }

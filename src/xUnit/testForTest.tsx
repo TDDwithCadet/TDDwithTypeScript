@@ -20,8 +20,13 @@ export class TestCaseTest extends TestCase {
     }
     public testSetUp(){
         this.test.run();
-        console.log(this.test.wasRun);
-        return(this.test.wasSetUp);
+        return (this.test.wasSetUp);
+    }
+
+    public testTemplateMethod(){
+        this.test = new WasRun("testMethod");
+        this.test.run();
+        return ("setUp testMethod tearDown " === this.test.log);
     }
 }
 
