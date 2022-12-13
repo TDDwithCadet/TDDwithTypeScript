@@ -18,6 +18,10 @@ export default class WasRun extends TestCase {
         return (this.wasRun);
     }
 
+    public testBrokenMethod(){
+        //make Exception
+    }
+
     public setUp():void{
         this.wasRun = "None";
         this.wasSetUp = "1";
