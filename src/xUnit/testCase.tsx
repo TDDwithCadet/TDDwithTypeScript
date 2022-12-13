@@ -3,7 +3,7 @@ import { TestResult } from "./testResult";
 import WasRun from "./wasRun";
 
 export class TestCase {
-    private name:string;
+    protected name:string;
 
     constructor(name:string){
         this.name = name;
@@ -15,12 +15,13 @@ export class TestCase {
     public run():TestResult {
         const result:TestResult = new TestResult();
         result.testStarted();
+        result.testFailed();
         this.setUp();
-        const method:string = "this." + this.name + "()";
         try {
+            const method:string = "this." + this.name + "()";
             eval(method);
         } catch(e: any) {
-            console.log(method, " not exist.")
+            result.testFailed();
         }
         this.tearDown();
         return (result);
