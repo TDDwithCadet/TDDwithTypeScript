@@ -25,10 +25,18 @@
 
 ## 기간
 
-2022.12.09 ~ 2022.12.??
+2022.12.09 ~ 2022.12.15
 
 ## 회고
 
 - 1부 TypeScript 문법 정리
     
-    [TypeScript 정리](https://www.notion.so/TypeScript-2c4afc3cf57c4d8b965b530ba546a2cf)
+    [1부 회고 (TypeScript 정리)](https://www.notion.so/1-TypeScript-2c4afc3cf57c4d8b965b530ba546a2cf)
+    
+- 2부
+    
+    [2부 회고](https://www.notion.so/2-0ac25f9a2fb84ad9975a505745d68aa2)
+    
+- 3부
+    
+    [3부 회고](https://www.notion.so/3-334b42fd405a48509e351b61c81c8a3f)
