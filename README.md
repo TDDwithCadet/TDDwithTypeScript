@@ -1,4 +1,4 @@
-# TDD in Typescript
+# TDD with Typescript
 
 ## 배경
 
